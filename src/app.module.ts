@@ -8,7 +8,7 @@ import {ConfigModule} from "@nestjs/config";
 import {ServeStaticModule} from "@nestjs/serve-static";
 import {LoggingInterceptor} from "./LoggingInterceptor";
 import {APP_INTERCEPTOR} from "@nestjs/core";
-import { CmsModule } from './ujs/ujs.module';
+import { CmsModule } from './haldiram/haldiram.module';
 import { AuthModule } from './admin/auth/auth.module';
 import { AdminloginModule } from './admin/adminlogin/adminlogin.module';
 

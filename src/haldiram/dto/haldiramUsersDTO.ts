@@ -1,5 +1,5 @@
 import { IsNotEmpty,IsOptional } from "class-validator";
-export class UsersDTO {
+export class haldiramUsersDTO {
  
     id: number;
     @IsNotEmpty()

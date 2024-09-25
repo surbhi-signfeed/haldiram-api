@@ -1,5 +1,5 @@
 import { IsNotEmpty } from "class-validator";
-export class StoreDTO {
+export class haldiramStoreDTO {
     @IsNotEmpty()
     store_id: number;
     storename: string;
