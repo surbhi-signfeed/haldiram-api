@@ -35,6 +35,11 @@ export class haldiramService {
 
   // add user
   async UserAdd(request, UserDTO: haldiramUsersDTO) {
+    const ipAddress =
+    request.headers["x-forwarded-for"] || request.connection.remoteAddress;
+  const username = request.user.username;
+  const currentDateTime = new Date();
+  const unixTimestamp = Math.floor(currentDateTime.getTime() / 1000);
     let checkUser =
       await this.UserRepository.findOne({
         where: {
@@ -72,6 +77,11 @@ export class haldiramService {
   }
   // add store
   async StoreAdd(request, StoreDTO: haldiramStoreDTO) {
+    const ipAddress =
+    request.headers["x-forwarded-for"] || request.connection.remoteAddress;
+  const username = request.user.username;
+  const currentDateTime = new Date();
+  const unixTimestamp = Math.floor(currentDateTime.getTime() / 1000);
     let checkStore =
       await this.haldiramStoreRepository.findOne({
         where: {
@@ -105,6 +115,11 @@ export class haldiramService {
   }
   // add store
   async ProductAdd(request, ProductDTO: haldiramProductDTO) {
+    const ipAddress =
+    request.headers["x-forwarded-for"] || request.connection.remoteAddress;
+  const username = request.user.username;
+  const currentDateTime = new Date();
+  const unixTimestamp = Math.floor(currentDateTime.getTime() / 1000);
     let checkProduct =
       await this.haldiramProductRepository.findOne({
         where: {
