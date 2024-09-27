@@ -28,6 +28,10 @@ let haldiramService = class haldiramService {
         this.haldiramProductRepository = haldiramProductRepository;
     }
     async UserAdd(request, UserDTO) {
+        const ipAddress = request.headers["x-forwarded-for"] || request.connection.remoteAddress;
+        const username = request.user.username;
+        const currentDateTime = new Date();
+        const unixTimestamp = Math.floor(currentDateTime.getTime() / 1000);
         let checkUser = await this.UserRepository.findOne({
             where: {
                 email: UserDTO.email
@@ -57,6 +61,10 @@ let haldiramService = class haldiramService {
         return { user: userList, message: "success", status: 200 };
     }
     async StoreAdd(request, StoreDTO) {
+        const ipAddress = request.headers["x-forwarded-for"] || request.connection.remoteAddress;
+        const username = request.user.username;
+        const currentDateTime = new Date();
+        const unixTimestamp = Math.floor(currentDateTime.getTime() / 1000);
         let checkStore = await this.haldiramStoreRepository.findOne({
             where: {
                 storename: StoreDTO.storename
@@ -83,6 +91,10 @@ let haldiramService = class haldiramService {
         return { store: storeList, message: "success", status: 200 };
     }
     async ProductAdd(request, ProductDTO) {
+        const ipAddress = request.headers["x-forwarded-for"] || request.connection.remoteAddress;
+        const username = request.user.username;
+        const currentDateTime = new Date();
+        const unixTimestamp = Math.floor(currentDateTime.getTime() / 1000);
         let checkProduct = await this.haldiramProductRepository.findOne({
             where: {
                 product_name: ProductDTO.product_name
